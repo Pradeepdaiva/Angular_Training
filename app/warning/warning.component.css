@@ -1,0 +1,11 @@
+.success{
+    color:black;
+    margin-top:20px;
+    background-color: rgb(209, 134, 64);
+    text-align: center;
+    border:5px solid rgb(255, 123, 0);
+    
+}
+h2{
+    text-align: center;
+}
