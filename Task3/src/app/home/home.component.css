@@ -1,0 +1,35 @@
+
+
+.head{
+    margin-top: 6.92px;
+    margin-left: 20px;
+    float: left;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.bar{
+    margin-top: 19.92px;
+    float: left;
+    margin-left: 390px;
+}
+
+ul {
+    list-style-type: none;
+    overflow: hidden;
+  }
+li {
+    float: left;
+  }
+  
+  li a {
+    
+      font-size: 20px;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 0px 5px;
+    text-decoration: none;
+    margin-right: 10px;
+  }
+  .margin{
+      margin:0px 15px;
+  }
