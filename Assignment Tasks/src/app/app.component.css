@@ -1,0 +1,13 @@
+.image{
+    background:url(/../../assets/image/images\ \(1\).jpg);
+    background-color: #cccccc;
+  height: 700px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  opacity: 0.8;
+}
+.msg{
+  opacity: 1;
+}
