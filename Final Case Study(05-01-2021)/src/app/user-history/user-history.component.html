@@ -1,0 +1,20 @@
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">ISBN</th>
+        <th scope="col">BookName</th>
+        <th scope="col">Borrowed Dates</th>
+        <th scope="col">Borrowed Books</th>
+        <th scope="col">Borrowed status</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let book of userHistory   ; let i=index">
+      <tr *ngIf="book.status=='Borrowed'">
+        <td>{{book.isbnNumber}}</td>
+        <td >{{book.bookName}}</td>
+        <td>{{book.dates}}</td>
+        <td>{{book.status}}</td>
+        <td >{{book.available==1?'Returned':'Pending'}}</td>
+      </tr>
+    </tbody>
+  </table>

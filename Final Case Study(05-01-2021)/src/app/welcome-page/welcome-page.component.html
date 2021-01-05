@@ -1,0 +1,52 @@
+
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="../../assets/selbyville-public-library-selbyville-library-library-logo-png-2528_2000.png" alt="logo" width="55" height="50" class="d-inline-block align-top">
+            <span id="size">Madras Library</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse margin" id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active space">
+              <a class="nav-link" (click)="home()" style="cursor: pointer;">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown space">
+              <a class="nav-link dropdown-toggle"  id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               Books
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
+            <a class="dropdown-item" (click)="section(n)"  *ngFor="let n of name">{{n.sectionName}}</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown space">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 Other
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
+                  <a class="dropdown-item" ></a>
+                  <a class="dropdown-item" (click)="aboutUs()">About us</a>
+                  <!-- <a class="dropdown-item">Contact us</a> -->
+                </div>
+              </li>
+              <li class="nav-item active space">
+                <a class="nav-link pointer" *ngIf="hide" (click)="userHistory()">History <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item space">
+                <button type="button" class="btn btn-outline-primary" *ngIf="!show" (click)="login()">Login</button>
+              </li>
+              <li class="nav-item space">
+                <button type="button" class="btn btn-outline-primary" *ngIf="hide" (click)="logout()">Logout</button>
+              </li>
+          </ul>
+        </div>
+      </nav>
+
+<div class="container-fluid line" style="margin-top: 80px;">
+<router-outlet></router-outlet>
+</div>
+<!-- <div  class="container-fluid line" style="margin-top: 80px;">
+
+  
+    
+</div> -->

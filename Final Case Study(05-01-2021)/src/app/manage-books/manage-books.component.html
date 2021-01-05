@@ -1,0 +1,84 @@
+<div class="col">
+<h3>
+Add Book
+</h3>
+<hr>
+<form #addBook="ngForm" (ngSubmit)="onSubmit(addBook)">
+    <div class="row">
+        <div class="form-group col-md-6">
+            <label>ISBN Number</label>
+            <input class="form-control" type="number" name="isbnNumber" required ngModel isbnNumber #isbnNumber="ngModel" minlength="5">
+            <p *ngIf="(!isbnNumber.valid && isbnNumber.touched)" style="color: red;">IsbnNumber must be at least 5 characters</p>
+
+        </div>
+        <div class="form-group col-md-6">
+            <label>Author Name</label>
+            <input class="form-control" type="text" name="authorName" required ngModel authorName #authorName="ngModel">
+            <p *ngIf="!authorName.valid && authorName.touched" style="color: red;">Enter author name</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Book Title</label>
+        <input class="form-control" type="text" name="bookName" required ngModel bookName #bookName="ngModel">
+        <p *ngIf="!bookName.valid && bookName.touched" style="color: red;">Enter the Correct phoneNumber</p>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-6">
+            <label>Category</label>
+            <!-- <input class="form-control" type="number" name="sectionId" required ngModel sectionId #sectionId="ngModel"> -->
+            <select  id="aantal" class="form-control"  name="sectionId" required ngModel sectionId #sectionId="ngModel" >
+                <option *ngFor="let option of options" [value]=option.sectionId>{{option.sectionName}}</option>
+              </select>
+              <p *ngIf="!sectionId.valid && sectionId.touched" style="color: red;">Select the section</p>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" (click)="add()">Add</button>
+        </div>
+        <div class="form-group col-md-6">
+            <label>Quantity</label>
+            <input class="form-control" type="number" name="noOfBooks" required ngModel noOfBooks #noOfBooks="ngModel">
+            <p *ngIf="!noOfBooks.valid && noOfBooks.touched" style="color: red;">Enter the Quantity</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Image Url</label>
+        <input class="form-control" type="text" name="bookImage" required ngModel bookImage #bookImage="ngModel">
+        <p *ngIf="!bookImage.valid && bookImage.touched" style="color: red;">Enter the Image Url</p>
+    </div>
+    <div class="form-group">
+        <label>Book Description</label>
+       <textarea class="form-control"  name="description" required ngModel description #description="ngModel"></textarea>
+       <p *ngIf="!description.valid && description.touched" style="color: red;">Enter the Description</p>
+    </div>
+    <button class="btn btn-primary" [disabled]="!addBook.valid" style="margin-right: 20px;">Add Book</button>
+    <button class="btn btn-gray" (click)="clearAll(addBook)">Clear All</button>
+</form>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Add Section</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form #sectionForm="ngForm">
+                <div class="form-group">
+                    <label>Section Name</label>
+                    <input class="form-control" type="text" name="sectionName" required ngModel sectionName #sectionName="ngModel" minlength="3">
+                    <p *ngIf="!sectionName.valid" style="color: black;">Enter minimum 3 Character</p>
+                    <p *ngIf="!available">Category not available</p>
+                    <p *ngIf="success" style="color:green;">Successfully Added.....</p>
+                    <p *ngIf="view">Already Exists</p>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <!-- <button type="button" class="btn btn-danger" [disabled]="!sectionName.valid" (click)="deleteSection(sectionForm)">Delete</button> -->
+          <button type="button" class="btn btn-primary" [disabled]="!sectionName.valid " (click)="postSection(sectionForm)">Update</button>
+        </div>
+      </div>
+    </div>
+  </div>

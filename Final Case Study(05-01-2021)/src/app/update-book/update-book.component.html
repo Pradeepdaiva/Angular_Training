@@ -1,0 +1,41 @@
+<div class="container col-md-9">
+    <form #addBook="ngForm">
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label>ISBN Number</label>
+                <div>
+                    <input class="form-control" type="number" [hidden]=true name="bookId" required [(ngModel)]="getBook.bookId">
+                </div>
+                <input class="form-control" type="number" name="isbnNumber" required [(ngModel)]="getBook.isbnNumber">
+            </div>
+            <div class="form-group col-md-6">
+                <label>Author Name</label>
+                <input class="form-control" type="text" name="authorName" required [(ngModel)]="getBook.authorName">
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Book Title</label>
+            <input class="form-control" type="text" name="bookName" required [(ngModel)]="getBook.bookName">
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label>Category</label>
+                <input class="form-control" type="number" name="sectionId" required [(ngModel)]="getBook.sectionId">
+            </div>
+            <div class="form-group col-md-6">
+                <label>Quantity</label>
+                <input class="form-control" type="number" name="noOfBooks" required [(ngModel)]="getBook.noOfBooks">
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Image Url</label>
+            <input class="form-control" type="text" name="bookImage" required [(ngModel)]="getBook.bookImage">
+        </div>
+        <div class="form-group">
+            <label>Book Description</label>
+           <textarea class="form-control"  name="description" required [(ngModel)]="getBook.description"></textarea>
+        </div>
+    <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="return()">Close</button>
+    <button type="button" class="btn btn-success" (click)="onSubmit(addBook)">Update</button>
+    </form>
+</div>

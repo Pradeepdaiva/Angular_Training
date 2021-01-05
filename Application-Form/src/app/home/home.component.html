@@ -1,0 +1,33 @@
+ <div class="container">
+    <div class="card " style="width: auto;">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item" *ngFor="let cmp of company">
+                    <div class="main">
+                        <div class="contain"><img src="{{cmp.url}}" alt="logo" width="70px" class="img"></div>   
+                        <div class="cmp"><h4>{{cmp.name}}</h4></div>
+                        <div class="button"><button class="btn btn-success" (click)="apply(cmp)">Apply</button></div>
+                    </div>
+                        
+            </li>
+            <!-- <li class="list-group-item">
+                <div class="main">
+                    <div class="contain"><img src="../../assets/288-2882161_copyright-2018-blue-ribbon-business-products-powered.png" alt="logo" width="70px" class="img"></div>   
+                    <div class="cmp"><h4>HP</h4></div>
+                    <div class="button"><button class="btn btn-success"  (click)="apply()">apply</button></div>
+                </div>
+                    
+        </li>
+        <li class="list-group-item">
+            <div class="main">
+                <div class="contain"><img src="../../assets/Wipro_Logo.png" alt="logo" width="70px" class="img"></div>   
+                <div class="cmp"><h4>Wipro</h4></div>
+                <div class="button"><button class="btn btn-success"  (click)="apply()">apply</button></div>
+            </div>
+                
+    </li> -->
+        </ul>
+        </div>
+
+</div>
+
+ 

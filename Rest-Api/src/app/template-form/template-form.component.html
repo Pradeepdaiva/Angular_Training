@@ -1,0 +1,19 @@
+<div>
+    <form #getForm="ngForm" (ngSubmit)="onSubmit(getForm)">
+        <div class="container  col-5 margin">
+            <div class="form-group  ">
+                <label for="exampleInputEmail1">Email</label>
+                <input type="text" class="form-control"  ngModel  name="email" required email #enteremail="ngModel">
+                <p *ngIf="enteremail.valid">Invalid email</p>
+              </div>
+              <div class="form-group ">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" ngModel  name="password" required>
+              </div>
+              <div class="form-group">
+              <button type="submit" [disabled]="!getForm.inValid" class="btn btn-primary">Submit</button>
+              </div>
+        </div>
+
+    </form>
+</div>

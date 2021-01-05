@@ -1,0 +1,117 @@
+<div class="col">
+    <div class="row">
+      <div class="form-group col-md-6">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <!-- <span class="input-group-text" id="basic-addon1">@</span> -->
+            <span class="fa fa-filter input-group-text" id="basic-addon1" style="font-size: 1.33em;"></span>
+          </div>
+          <input type="number" class="form-control" placeholder="ISBN Number" [(ngModel)]="isbnNumber" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+      </div>
+      <div class="form-group col-md-6">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class=" fa fa-filter input-group-text" id="basic-addon1" style="font-size: 1.33em;"></span>
+          </div>
+          <input type="text" class="form-control" placeholder="User Name" [(ngModel)]="searchItem" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+      </div>
+    </div>
+      <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">S.No</th>
+              <th scope="col">ISBN</th>
+              <th scope="col">BookName</th>
+              <th scope="col">User ID</th>
+              <th scope="col">Person Name</th>
+              <th scope="col">Issued Date</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let book of bookStatus | userFilter : isbnNumber | userFilter : searchItem; let i=index">
+            <tr *ngIf="book.available==0 && book.status=='Borrowed'">
+              <th scope="row">{{i+1}}</th>
+              <td>{{book.isbnNumber}}</td>
+              <td>{{book.bookName}}</td>
+              <td>{{book.userId}}</td>
+              <td>{{book.userName}}</td>
+              <td>{{book.dates}}</td>
+              <td>
+                 <!-- Button to Open the Modal -->
+                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal" (click)="returnBook(book)"> 
+                Return </button><br>
+                
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  
+    
+    <!-- The Modal -->
+    <!-- <div class="modal" id="myModal">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content"> -->
+    
+          <!-- Modal Header -->
+          <!-- <div class="modal-header">
+            <h4 class="modal-title">Edit Book</h4>
+            <button type="button" class="close" data-dismiss="modal">x</button>
+          </div> -->
+    
+          <!-- Modal body -->
+          <!-- <div class="modal-body">
+              <form #addBook="ngForm">
+                  <div class="row">
+                      <div class="form-group col-md-6">
+                          <label>ISBN Number</label>
+                          <input class="form-control" type="number" [disabled]="true" name="bookId" required [(ngModel)]="getBook.bookId">
+                          <input class="form-control" type="number" name="isbnNumber" required [(ngModel)]="getBook.isbnNumber">
+                      </div>
+                      <div class="form-group col-md-6">
+                          <label>Author Name</label>
+                          <input class="form-control" type="text" name="authorName" required [(ngModel)]="getBook.authorName">
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label>Book Title</label>
+                      <input class="form-control" type="text" name="bookName" required [(ngModel)]="getBook.bookName">
+                  </div>
+                  <div class="row">
+                      <div class="form-group col-md-6">
+                          <label>Category</label>
+                          <input class="form-control" type="number" name="sectionId" required [(ngModel)]="getBook.sectionId">
+                      </div>
+                      <div class="form-group col-md-6">
+                          <label>Quantity</label>
+                          <input class="form-control" type="number" name="noOfBooks" required [(ngModel)]="getBook.noOfBooks">
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label>Image Url</label>
+                      <input class="form-control" type="text" name="bookImage" required [(ngModel)]="getBook.bookImage">
+                  </div>
+                  <div class="form-group">
+                      <label>Book Description</label>
+                     <textarea class="form-control"  name="description" required [(ngModel)]="getBook.description"></textarea>
+                  </div>
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-success" (click)="onSubmit(addBook)">Update</button>
+              </form>
+          </div> -->
+    
+          <!-- Modal footer
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-success" data-dismiss="modal" (click)="updateBook()">Update</button>
+          </div> -->
+    
+        <!-- </div>
+      </div>
+    </div> -->
+    
+           
+  
+  

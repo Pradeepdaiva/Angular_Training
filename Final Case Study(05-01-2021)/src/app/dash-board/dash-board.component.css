@@ -1,0 +1,28 @@
+h1{
+    text-align: center;
+}
+
+.decoration{
+    text-decoration: none;
+    cursor: pointer;
+}
+.border{
+    border: 2px solid black;
+}
+.margin{
+   margin-left: 50px;
+   margin-right: 80px;
+}
+.list{
+    margin-left: -15px;
+}
+.list1{
+    margin-right: 100px;
+}
+.border{
+    border-bottom: 0px;
+}
+a{
+    cursor: pointer;
+}
+

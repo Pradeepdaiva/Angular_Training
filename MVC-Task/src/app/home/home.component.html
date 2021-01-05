@@ -1,0 +1,23 @@
+<div class="container">
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Email</th>
+            <th scope="col">Password</th>
+            <th scope="col">Delete</th>
+            <th scope="col">Update</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let d of details">
+            <th scope="row">{{d.id}}</th>
+            <td>{{d.email}}</td>
+            <td>{{d.password}}</td>
+            <td><button class="btn btn-danger" (click)="delete(d)">Delete</button></td>
+            <td><button class="btn btn-danger" (click)="update(d)">Update</button></td>
+          </tr>
+          </tbody>
+          </table>
+    
+</div>

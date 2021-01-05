@@ -1,0 +1,32 @@
+<div class="container ">
+    <div class="row">
+        
+        <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm); registerForm.reset()">
+            <div class="form-group">
+                <label for="userName">UserName</label>
+                <input type="text" class="form-control" id="userName" required ngModel name="userName" #userName="ngModel">
+            </div>
+            <div class="form-group">
+                <label for="emailId">Email</label>
+                <input type="email" class="form-control" id="emailId" required eamil ngModel name="email" #email="ngModel">
+            </div>
+            <div class="form-group">
+                <label for="userPassword">Password</label>
+                <input type="password" class="form-control" id="userPassword" required ngModel name="password" #password="ngModel" data-toggle="password">
+            </div>
+            <button class="btn btn-primary">Submit</button>
+            
+        </form>
+        <button class="btn btn-danger" (click)="deleteAll()">Delete All</button>
+
+    </div>
+    
+</div>
+
+<div>
+    <ul>
+        <li *ngFor="let user of userdetails">
+            {{user.email}}
+        </li>
+    </ul>
+</div>

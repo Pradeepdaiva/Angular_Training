@@ -1,0 +1,18 @@
+<div class="container"> 
+    <h1>Update  </h1>
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value); loginForm.reset()" >
+        <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="getData.id" name="id">
+            <label for="userEmail" >Email</label>
+            <input type="text" class="form-control" id="userEmail" [(ngModel)]="getData.email" name="email" required >
+            <!-- <p *ngIf="!userEmail.valid && userEmail.touched" style="color: red;">Enter valid email address</p> -->
+        </div>
+        <div class="form-group">
+            <label for="userPassword">Password</label>
+            <input type="password" class="form-control" id="userPassword" [(ngModel)]="getData.password" name="password" required #userPassword="ngModel">
+            <p *ngIf="!userPassword.valid && userPassword.touched" style="color: red;">Enter correct password</p>
+        </div>
+        <button type="submit" [disabled]="!loginForm.valid" class="btn btn-primary">Submit</button>
+    </form>
+
+</div>

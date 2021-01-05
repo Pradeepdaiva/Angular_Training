@@ -1,0 +1,48 @@
+.container{
+    margin: auto;
+  width: 70%;
+ /* margin-top: 100px; */
+  padding: 10px;
+border:2px solid #e4e2e24f;
+}
+.containers{
+    margin: auto;
+  width: 70%;
+  margin-top: 100px;
+  padding: 10px;
+/* border:2px solid black; */
+}
+input.ng-invalid.ng-touched{
+    border: 2px solid red;
+}
+.required{
+    color: red;
+    margin-right: 2px;
+}
+.contain{
+    margin-right: 50px;
+    width: 68px;
+    float: left;
+  }
+  .img{
+    margin-right: 5px;
+    margin-left: 15px;
+    margin-top:25px;
+  }
+  .cmp{
+    margin-right: 50px;
+    width: 80px;
+    float: left;
+    margin-left: 100px;
+    
+  }
+  h1{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 250px;
+   margin: 5px 0px;
+   line-height: 1.7;
+  }
+  button{
+    margin-top: 10px;
+}

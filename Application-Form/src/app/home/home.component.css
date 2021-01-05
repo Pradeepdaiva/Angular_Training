@@ -1,0 +1,38 @@
+.container{
+    margin: auto;
+  width: 50%;
+  margin-top: 100px;
+  padding: 10px;
+}
+.main{
+  height: 50px;
+}
+.contain{
+  margin-right: 50px;
+  width: 68px;
+  float: left;
+}
+.img{
+  margin-right: 5px;
+}
+.cmp{
+  margin-right: 50px;
+  width: 80px;
+  float: left;
+  margin-left: 100px;
+  
+}
+h4{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 80px;
+ margin: 5px 0px;
+ line-height: 1.7;
+}
+.button{
+  float: right;
+}
+button{
+  margin-top: 8px;
+  line-height: 1.7;
+}
